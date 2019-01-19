@@ -1,0 +1,140 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Installing Flask on Windows</title>
+<style>
+h2,h3 {color: red}
+</style> 
+</head>
+
+<body>
+<center>
+<h2>Installing Flask on Windows</h2>
+<h3>November 16, 2015</h3>
+</center>
+
+<h3>1. Assuming Python (e.g., Canopy) is already installed</h3>
+
+<p>If you have not installed it yet,
+   go <a href="http://www1.cmc.edu/pages/faculty/alee/cs40/penv/installPython.html">here</a> and install it and come
+   back to continue.</p>
+  
+ 
+<h3>2. <i>pip</i> and <i>distribute</i></h3>
+
+<p>We'll use the Python tool <i>easy_install</i> to
+  install <i>pip</i>.  To get <i>easy_install</i>, download the
+  <a href="http://www1.cmc.edu/pages/faculty/alee/cs40/penv/distribute_setup.py">distribute_setup.py</a> by right
+  clicking on it and run it by
+  simply double clicking on it from your <i>Downloads</i> folder.</p>
+
+<p>If you used Canopy to install Python, you should now be able to
+  run <i>easy_install</i> in a shell (from the command prompt).
+  Canopy should have added the needed information to your system's
+  path information.  To check that everything is in order, open a
+  command prompt and run:</p>
+<pre>       easy_install
+</pre>
+<p>It may ask you for <tt>username</tt> and <tt>password</tt>. If you
+get an error saying "error: No urls, filenames, or requirements
+specified (see --help)", then you're good to go - go to the <b>Install
+PIP</b> section below.  This error is only saying you did not tell it
+what to install.  If you got an error saying "'easy_install' is not
+recognized. . .", then proceed to the <b>Modify Your Path</b> section.</p>
+
+
+<h3>3. Modify Your Path</h3>
+
+<p>If you got the "not recognized" error, you need to add
+  the <i>easy_install</i> command and other Python scripts to the
+  command search path, by adding your Python installation's Scripts
+  folder to the <i>PATH</i> environment variable. To do that,
+  right-click on the <b>Computer</b> icon on the <b>Desktop</b> or
+  in the <b>Start</b> menu, and choose <b>Properties</b>. Then click
+  on <b>Advanced System settings</b> (in Windows XP, click on
+  the <b>Advanced</b> tab instead). Then click on
+  the <b>Environment variables</b> button.  Finally, double-click on
+  the <b>Path</b> variable in the <b>System variables</b> section,
+  and add the path of your Python interpreter's Scripts folder.  Be
+  sure to delimit it from existing values with a semicolon ('<b>;</b>').
+  Assuming you are using Python 2.7 on the default path, add the
+  following value:</p>
+<pre>       ;C:\Python27\Scripts
+</pre>
+<p>For Canopy users, these will look like:</p>
+<pre>       C:\Users\username\AppData\Local\Enthought\Canopy\User; C:\Users\username\AppData\Local\Enthought\Canopy\User\Scripts
+</pre>
+<p>And you are done!  To check that it worked, open the <b>Command
+Prompt</b> and execute <tt>c:\easy_install</tt>.  If you
+have <b>User Account Control</b> enabled on Windows Vista or
+Windows 7, it should prompt you for administrator privileges.</p>
+
+
+<h3>4. Install PIP</h3>
+
+<p>Now that you have <i>easy_install</i>, you can use it to
+  install <i>pip</i> with the following command on the command
+  prompt.  If you are not at the <b>C:\</b> folder, you need to go
+  to that folder to issue this command:</p>
+<pre>       C:\easy_install pip
+</pre>
+<p>Now, you are ready to install Flask.</p>
+
+
+
+<h3>5. Install Flask</h3>
+
+<p>You should use <i>pip</i> to install and deploy <i>Flask</i>.  To
+  install <i>Flask</i> generally on your system, give this command on
+  the command prompt:</p>
+<pre>       pip install flask
+</pre>
+<p>Note that you can also specify the <i>Flask</i> version, should you
+need (you won't need this one):</p> 
+<pre>       pip install flask=0.10
+</pre>
+<p>This should install <i>Flask</i> and everything it depends on.
+Don't be surprised if you find it has installed several Python
+modules as a result.</p>
+
+<p><i>Flask</i> should now be installed!  Now, time to create our
+first app.</p> 
+
+
+<h3>6. The <tt>Simple.py</tt> example</h3>
+
+Download <tt>simple.py</tt> from today's lecture notes area into a
+folder of your choice.  Go to that folder using <tt>cd</tt> commands
+on a Terminal window and try:
+<pre>   $ python simple.py    // to run the server app (simple.py) on the server
+    * Running on http://127.0.0.1:5000/
+</pre>
+Then access it (as many times as you wish) on your web browser (e.g.,
+Chrome) with: 
+<pre>       http://127.0.0.1:5000/
+</pre>
+<p>When you are done, stop the server by hitting <b>control-C</b>.</p>
+
+
+
+<h3>7. The Quickstart example</h3>
+
+<p>Now go back
+  to <a href="http://flask.pocoo.org/docs/">http://flask.pocoo.org/docs/</a>
+  and click on <tt>Quickstart</tt> and follow the instructions on that page
+  for a quick tour.  You will end up trying a command like this:</p>
+<pre>       python hello.py    // to run the server app (hello.py) on the server
+         * Running on http://127.0.0.1:5000/
+</pre>
+Then access it (as many times as you wish) on your web browser with:
+<pre>       http://127.0.0.1:5000/
+</pre>
+<p>When you are done, stop the server by hitting <b>control-C</b>.</p>
+
+<p>That's it!</p>
+
+
+
+
+
+
+</body></html>
